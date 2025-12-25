@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B'day Cake</title>
+    <link rel="stylesheet" href="../public/style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="candle-container">
+        <div class="candle"></div>
+        <div class="text">17</div>
+      </div>
+      <div class="big-cake">
+        <div class="cake-container">
+          <div class="cake"></div>
+          <div class="cake"></div>
+          <div class="cake"></div>
+        </div>
+        <div class="cake-container">
+          <div class="cake"></div>
+          <div class="cake"></div>
+          <div class="cake"></div>
+        </div>
+        <div class="cake-container">
+          <div class="cake"></div>
+          <div class="cake"></div>
+          <div class="cake"></div>
+        </div>
+        <div class="btn">
+          <p>Tekan untuk meniup lilin!</p>
+        </div>
+        <a href="/docs/kado/" class="link-kado">NEXT >>></a>
+      </div>
+    </div>
+
+    <audio src="../public/assets/HBD.mp3" class="music"></audio>
+
+    <script>
+      const tiup = document.querySelector(".btn");
+
+      tiup.addEventListener("click", function () {
+        const lilin = document.querySelector(".candle")
+
+        lilin.style.animation = "lilin 2s ease"
+
+        setTimeout(() => {
+            lilin.style.visibility = "hidden"
+        }, 1900)
+
+        setInterval(()=>{
+            const umur = document.querySelector(".text")
+    
+            umur.style.visibility = "visible"
+            umur.style.animation = "spawn 2s ease"
+        },1500)
+
+            tiup.style.animation = "lilin 2s ease 2s"
+            setTimeout(()=>{
+                tiup.style.visibility = "hidden"
+
+                setTimeout(()=>{
+                    const linkKado = document.querySelector('.link-kado')
+
+                    linkKado.style.visibility = "visible"
+                }, 1500)
+            }, 3900)
+      });
+    </script>
+  </body>
+</html>
